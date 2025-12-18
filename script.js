@@ -19,7 +19,6 @@ const PHOTOS = [
     { path: 'assets/emma and me/IMG_1844.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_1892.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_1893.JPG', caption: '' },
-    { path: 'assets/emma and me/IMG_1921.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_2017 2.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_2189.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_2471.jpg', caption: '' },

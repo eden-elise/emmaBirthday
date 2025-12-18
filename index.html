@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Floating sparkles container -->
@@ -68,7 +68,10 @@
     <div class="modal" id="photoModal">
         <button class="modal-close" aria-label="Close">&times;</button>
         <button class="modal-nav modal-prev" aria-label="Previous">&#10094;</button>
-        <img class="modal-image" id="modalImage" src="" alt="Memory photo">
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="Memory photo">
+            <p class="modal-caption" id="modalCaption"></p>
+        </div>
         <button class="modal-nav modal-next" aria-label="Next">&#10095;</button>
     </div>
 

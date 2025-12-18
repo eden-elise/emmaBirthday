@@ -3,32 +3,55 @@
  * Handles photo gallery, modal viewer, and sparkle animations
  */
 
-// Photo collection - paths relative to index.html
+// Photo collection with captions - edit the caption field to add your own!
 const PHOTOS = [
-    'assets/emma and me/85C3FFED-B64C-4989-A1B5-4821FBDB7EE7.JPG',
-    'assets/emma and me/IMG_0396.JPG',
-    'assets/emma and me/IMG_0633.JPG',
-    'assets/emma and me/IMG_0989.JPG',
-    'assets/emma and me/IMG_1009.jpg',
-    'assets/emma and me/IMG_1620.JPG',
-    'assets/emma and me/IMG_1691.JPG',
-    'assets/emma and me/IMG_1844.JPG',
-    'assets/emma and me/IMG_1893.JPG',
-    'assets/emma and me/IMG_2017 2.jpg',
-    'assets/emma and me/IMG_2189.JPG',
-    'assets/emma and me/IMG_2477.JPG',
-    'assets/emma and me/IMG_2573.jpg',
-    'assets/emma and me/IMG_3725.JPG',
-    'assets/emma and me/IMG_3727 2.JPG',
-    'assets/emma and me/IMG_3727.JPG',
-    'assets/emma and me/IMG_3744.JPG',
-    'assets/emma and me/IMG_3756.JPG',
-    'assets/emma and me/IMG_3773.JPG',
-    'assets/emma and me/IMG_3805.JPG',
-    'assets/emma and me/IMG_4107.JPG',
-    'assets/emma and me/IMG_6054.JPG',
-    'assets/emma and me/IMG_7100.JPG',
-    'assets/emma and me/IMG_7178.JPG'
+    { path: 'assets/emma and me/85C3FFED-B64C-4989-A1B5-4821FBDB7EE7.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_0396.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_0633.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_0809.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_0854.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_0989.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_1009.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_1092.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_1281.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_1620.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_1691.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_1844.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_1892.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_1893.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_2017 2.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_2189.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_2471.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_2477.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_2573.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_2587 2.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_3050.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_3331.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_3725.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_3727 2.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_3727.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_3744.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_3756.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_3773.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_3805.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_4107.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_6054.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_7100.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_7178.JPG', caption: '' },
+    { path: 'assets/emma and me/IMG_7426.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_7455.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_7502.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_7965.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8292.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8622.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8678.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8682.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8689.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8765.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8795.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8826.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_8837.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_9874.jpg', caption: '' }
 ];
 
 // Configuration constants
@@ -39,6 +62,7 @@ const SPARKLE_COLORS = ['#ffd700', '#ff69b4', '#ff1493', '#ffffff'];
 const gallery = document.getElementById('photoGallery');
 const modal = document.getElementById('photoModal');
 const modalImage = document.getElementById('modalImage');
+const modalCaption = document.getElementById('modalCaption');
 const sparklesContainer = document.querySelector('.sparkles');
 
 // Current photo index for modal navigation
@@ -68,11 +92,11 @@ function initGallery() {
 
 /**
  * Create a single photo card element
- * @param {string} photoPath - Path to the photo
+ * @param {Object} photo - Photo object with path and caption
  * @param {number} index - Index in the gallery
  * @returns {HTMLElement} The photo card element
  */
-function createPhotoCard(photoPath, index) {
+function createPhotoCard(photo, index) {
     const card = document.createElement('div');
     card.className = 'photo-card';
     card.setAttribute('tabindex', '0');
@@ -80,18 +104,18 @@ function createPhotoCard(photoPath, index) {
     card.setAttribute('aria-label', `View memory photo ${index + 1}`);
 
     const img = document.createElement('img');
-    img.src = photoPath;
-    img.alt = `Memory with Emma - Photo ${index + 1}`;
+    img.src = photo.path;
+    img.alt = photo.caption || `Memory with Emma - Photo ${index + 1}`;
     img.loading = 'lazy';
 
     card.appendChild(img);
 
     // Click handler to open modal
-    card.addEventListener('click', () => openModal(photoPath));
+    card.addEventListener('click', () => openModal(photo));
     card.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            openModal(photoPath);
+            openModal(photo);
         }
     });
 
@@ -164,17 +188,32 @@ function initModal() {
 
 /**
  * Open modal with specified photo
- * @param {string} photoPath - Path to the photo to display
+ * @param {Object} photo - Photo object with path and caption
  */
-function openModal(photoPath) {
-    currentPhotoIndex = PHOTOS.indexOf(photoPath);
+function openModal(photo) {
+    currentPhotoIndex = PHOTOS.findIndex(p => p.path === photo.path);
     if (currentPhotoIndex === -1) {
         currentPhotoIndex = 0;
     }
 
-    modalImage.src = photoPath;
+    updateModalContent(PHOTOS[currentPhotoIndex]);
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
+}
+
+/**
+ * Update modal image and caption
+ * @param {Object} photo - Photo object with path and caption
+ */
+function updateModalContent(photo) {
+    modalImage.src = photo.path;
+
+    if (photo.caption) {
+        modalCaption.textContent = photo.caption;
+        modalCaption.style.display = 'block';
+    } else {
+        modalCaption.style.display = 'none';
+    }
 }
 
 /**
@@ -199,7 +238,7 @@ function navigateModal(direction) {
         currentPhotoIndex = 0;
     }
 
-    modalImage.src = PHOTOS[currentPhotoIndex];
+    updateModalContent(PHOTOS[currentPhotoIndex]);
 }
 
 /**

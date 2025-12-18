@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# IDE
+.idea/
+.vscode/
+*.sublime-*
+
+# Thumbnails
+Thumbs.db
+ehthumbs.db
+
+# Logs
+*.log
+
+# Optional: if you add build tools later
+node_modules/
+dist/

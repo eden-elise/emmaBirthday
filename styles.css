@@ -155,7 +155,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: shimmer 3s linear infinite;
+    animation: shimmer 5s linear infinite;
     filter: drop-shadow(2px 2px 4px rgba(199, 21, 133, 0.5));
 }
 

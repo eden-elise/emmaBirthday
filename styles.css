@@ -360,17 +360,6 @@ body {
     opacity: 1;
 }
 
-/* Polaroid-style variant for some cards */
-.photo-card:nth-child(3n) {
-    background: var(--white);
-    padding: var(--spacing-xs);
-    padding-bottom: var(--spacing-lg);
-}
-
-.photo-card:nth-child(3n) img {
-    border-radius: var(--radius-sm);
-}
-
 /* ===========================================
    Final Section
    =========================================== */

@@ -5,7 +5,6 @@
 
 // Photo collection with captions - edit the caption field to add your own!
 const PHOTOS = [
-    { path: 'assets/emma and me/85C3FFED-B64C-4989-A1B5-4821FBDB7EE7.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_0396.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_0633.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_0809.jpg', caption: '' },
@@ -19,16 +18,16 @@ const PHOTOS = [
     { path: 'assets/emma and me/IMG_1844.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_1892.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_1893.JPG', caption: '' },
-    { path: 'assets/emma and me/IMG_2017 2.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_1921.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_2017.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_2189.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_2471.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_2477.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_2573.jpg', caption: '' },
-    { path: 'assets/emma and me/IMG_2587 2.jpg', caption: '' },
+    { path: 'assets/emma and me/IMG_2587.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_3050.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_3331.jpg', caption: '' },
     { path: 'assets/emma and me/IMG_3725.JPG', caption: '' },
-    { path: 'assets/emma and me/IMG_3727 2.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_3727.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_3744.JPG', caption: '' },
     { path: 'assets/emma and me/IMG_3756.JPG', caption: '' },
